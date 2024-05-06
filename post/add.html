@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Styles/Style.css">
+    <link rel="stylesheet" href="../Styles/add.css">
+    <title>New Blog Post</title>
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <a href="../index.html" class="logo">BB</a>
+            <ul>
+                <li><a href="../index.html">Feed</a></li>
+                <li><a href="../post/add.html">Add</a></li>
+                <li><a href="../account/login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <div class="add-container">
+            <h1>Add New Blog Post</h1>
+            <form action="add_post_process.php" method="post" enctype="multipart/form-data">
+                <input type="file" name="image" id="image" style="display: none;">
+                <button type="button" class="image-upload-btn" onclick="document.getElementById('image').click();">Add
+                    Image</button>
+                <input type="text" name="title" placeholder="Title" required>
+                <textarea name="content" placeholder="Write your blog post here..." required></textarea>
+                <input type="submit" value="Publish Post">
+            </form>
+        </div>
+
+    </main>
+
+    <footer>
+        <div>
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">Twitter</a>
+        </div>
+        <div>
+            copyright &copy;
+        </div>
+        <div>
+            <li><a href="">Terms And Conditions</a></li>
+            <li><a href="">Privacy Policy</a></li>
+        </div>
+    </footer>
+
+</body>
+
+</html>
