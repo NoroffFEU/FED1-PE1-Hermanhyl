@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./Styles/Style.css">
+    <script type="module" src="./js-files/index.js"></script>
     <title>Homepage</title>
 </head>
 
@@ -12,12 +13,11 @@
 
     <header>
         <nav>
-            <a href="/index.html">BB
-            </a>
+            <a href="./index.html" class="logo">BB</a>
             <ul>
-                <li><a href="/index.html"></a>Home</li>
-                <li><a href=""></a>Add</li>
-                <li><a href=""></a>Login</li>
+                <li><a href="./index.html">Feed</a></li>
+                <li><a href="/post/add.html">Add</a></li>
+                <li><a href="/account/login.html">Login</a></li>
             </ul>
         </nav>
     </header>
@@ -29,6 +29,8 @@
         <img src="" alt="">
 
         <!-- Image grid -->
+
+        <div id="postsContainer"></div>
 
         <div class="grid-container">
             <div class="grid-item">
@@ -54,7 +56,9 @@
 
     <footer>
         <div>
-
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">Twitter</a>
         </div>
         <div>
             copyright &copy;
