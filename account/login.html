@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Styles/Style.css">
+    <link rel="stylesheet" href="../Styles/login.css">
+    <title>Login</title>
+</head>
+
+<body class="login-body">
+
+    <header>
+        <nav>
+            <a href="../index.html" class="logo">BB</a>
+            <ul>
+                <li><a href="../index.html">Feed</a></li>
+                <li><a href="../post/add.html">Add</a></li>
+                <li><a href="../account/login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="login-container">
+            <h1>Bilbo Bolla</h1>
+            <form action="login_process.php" method="post">
+                <input type="text" name="username" placeholder="Username" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <input type="submit" value="Log in">
+            </form>
+            <p class="register-text">Don't have an account? <a href="../account/register.html">Register</a></p>
+        </div>
+    </main>
+
+</body>
+
+</html>
