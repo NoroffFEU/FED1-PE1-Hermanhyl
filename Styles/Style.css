@@ -65,16 +65,17 @@ nav li {
     grid-gap: 20px;
     padding: 20px;
     justify-content: center;
+    text-align: center;
     left: 34px;
     top: 321px;
 }
 
 .grid-item {
     text-align: center;
-    
+
 }
 
-.grid-item img {
+.grid-container img {
     max-width: 100%;
     width: 144px;
     height: 144px;
@@ -85,12 +86,12 @@ nav li {
     border-radius: 10px;
 }
 
-.grid-item a {
+.grid-container a {
     text-decoration: none;
     color: black;
 }
 
-.grid-item p {
+.grid-container h2 {
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
