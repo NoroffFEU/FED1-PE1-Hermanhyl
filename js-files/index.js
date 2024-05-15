@@ -1,17 +1,4 @@
-import {fetchAPI} from "./fetch.mjs";
-
-// Function to fetch a specific blog post by ID
-// async function fetchBlogPostById(blogName, postId) {
-//     try {
-//         const response = await fetch(`${apiUrl}/blog-posts/${blogName}/${postId}`);
-//         const data = await response.json();
-//         return data;
-//     } catch (error) {
-//         console.error('Error fetching blog post:', error);
-//         return null;
-//     }
-// }
-
+// Fetch data from the API endpoint
 fetch('https://v2.api.noroff.dev/blog/posts/bilbobolla')
     .then(response => {
         if (!response.ok) {
@@ -20,37 +7,43 @@ fetch('https://v2.api.noroff.dev/blog/posts/bilbobolla')
         return response.json();
     })
     .then(data => {
-        if (data && Array.isArray(data.data) && data.data.length > 0) {
-            const posts = data.data;
-
-            // HTML for each post
-            const postsHTML = posts.map(post => `
-                <div class="post">
-                    <h2>${post.title}</h2>
-                    <p>${post.body}</p>
-                    <p>Published on: ${post.updated}</p>
-                    <img src="${post.media.url}" alt="${post.media.alt}">
-                    <p>Author: ${post.author.name}</p>
-                </div>
-            `).join('');
-
-            // Insert the generated HTML into the webpage
-            document.getElementById('postsContainer').innerHTML = postsHTML;
-        } else {
-            throw new Error('No posts found in the response');
-        }
+        createBlogCards(data.data);
+        console.log(data);
     })
     .catch(error => {
         console.error('Error fetching posts:', error);
-    })
-    .catch(error => {
-        console.error('Unhandled error:', error);
     });
 
+function createBlogCards(blogPosts) {
+    let gridContainer = document.querySelector('.grid-container');
+    if (!gridContainer) {
+        console.error('Grid container not found');
+        return;
+    }
 
-async function main() {
-const responseData = await fetchAPI()
+    blogPosts.forEach(data => {
+        let gridItem = document.createElement('div');
+        gridItem.classList.add('img-container');
 
+        let img = document.createElement('img');
+        img.addEventListener('click', () => {
+            window.location.href = `post/index.html?id=${data.id}`;
+        });
+        img.alt = '';
+        if (data.media && data.media.url) {
+            img.src = data.media.url;
+        } else {
+            // img.src = '../images/Image_nr1.jpg';
+        }
+
+        let title = document.createElement('h2');
+        title.textContent = data.title;
+        // title.addEventListener('click', () => {
+        //     window.location.href = `post/index.html?id=${post.id}`;
+        // });
+
+        gridItem.appendChild(img);
+        gridItem.appendChild(title);
+        gridContainer.appendChild(gridItem);
+    });
 }
-
-main();
