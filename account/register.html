@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Styles/Style.css">
+    <script type="module" src="../js-files/auth/register.mjs"></script>
     <title>Register</title>
 </head>
 
@@ -22,14 +23,17 @@
     </header>
 
     <main>
-        <div class="container">
-            <h2>Login</h2>
-            <form action="login_process.php" method="post">
-                <input type="text" name="username" placeholder="Username" required>
-                <input type="password" name="password" placeholder="Password" required>
+
+        <div class="register-container">
+            <h1>Login</h1>
+            <form action="../js-files/auth/register.mjs" method="post" id="register-form">
+                <input type="text " name="name" placeholder="name" required>
+                <input type="text" name="email" placeholder="email" required>
+                <input type="password" name="password" placeholder="Password" required minlength="8">
                 <input type="submit" value="Register">
             </form>
         </div>
+
     </main>
 
 </body>
