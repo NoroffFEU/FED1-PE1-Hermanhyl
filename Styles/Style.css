@@ -1,4 +1,4 @@
-:root{
+:root {
     --black: #000;
     --gold: #FFB800;
     --gray: #3B3B3B;
@@ -119,7 +119,29 @@ footer div:last-child {
     margin-right: 0;
 }
 
+.carusel-container {
+    max-width: 600px;
+    margin: 20px auto;
+    text-align: center;
+}
 
+/* Styling for the image */
+.carousel-container, img {
+    max-width: 200px; /* Set maximum width */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.post-container {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.carusel-btn {
+    padding: 10px 20px;
+    margin: 0 5px;
+    cursor: pointer;
+}
 
 
 
