@@ -14,7 +14,7 @@ registerForm.addEventListener('submit', (event) => {
 
 async function registerUser(name, email, password) {
     console.log('register user');
-    await doFetch(register_Api, false, {
+    const response = await doFetch(register_Api, false, {
         method: 'POST',
         body: JSON.stringify({
             name,
@@ -22,6 +22,10 @@ async function registerUser(name, email, password) {
             password
         }),
     });
+    if (response.ok) {
+        return await response.json();
+    }
+    throw new Error("could not register the account")
 }
 
 
