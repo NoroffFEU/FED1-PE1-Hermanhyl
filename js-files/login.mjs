@@ -8,7 +8,6 @@ const runPage = () => {
         event.preventDefault() 
         try {
             let formData = new FormData(loginForm)
-
             const response = await doFetch(API_Login_Url, false, {
                 method: 'POST',
                 body: JSON.stringify({
@@ -16,17 +15,18 @@ const runPage = () => {
                     password: formData.get('password')
                 })
             });
+            console.log('login successful',response);
             if(!response) {
                 alert('your email or password is wrong') 
                 return
             }
             console.log(response); // Log the entire response object
-            const accessToken = response.data;
+            const accessToken = response.data.accessToken;
             localStorage.setItem('access-token', JSON.stringify(accessToken));
         } catch (error) {
             console.error('Error while logging in:', error);
         }
-    } )
+    })
 }
 
 runPage()
