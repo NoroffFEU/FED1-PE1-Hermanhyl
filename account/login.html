@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../Styles/Style.css">
     <link rel="stylesheet" href="../Styles/login.css">
     <script type="module" src="../js-files/login.mjs"></script>
+    <script type="module" src="../js-files/comon.mjs"></script>
     <title>Login</title>
 </head>
 
@@ -17,8 +18,8 @@
             <a href="../index.html" class="logo">BB</a>
             <ul>
                 <li><a href="../index.html">Feed</a></li>
-                <li><a href="../post/add.html">Add</a></li>
-                <li><a href="../account/login.html">Login</a></li>
+                <li><a href="/post/add.html" class="login-required">Add</a></li>
+                <li><a href="/account/login.html">Login</a></li>
             </ul>
         </nav>
     </header>
@@ -27,11 +28,11 @@
         <div class="login-container">
             <h1>Bilbo Bolla</h1>
             <form action="login_process.php" method="post" id="login-form">
-                <!-- <input type="text " name="name" placeholder="name" required> -->
                 <input type="text" name="username" placeholder="Username" required>
                 <input type="password" name="password" placeholder="Password" required>
                 <input type="submit" value="Login">
             </form>
+            <button id="logout-button" style="display: none;">Logout</button> <!-- Add the logout button here -->
             <p class="register-text">Don't have an account? <a href="../account/register.html">Register</a></p>
         </div>
     </main>
