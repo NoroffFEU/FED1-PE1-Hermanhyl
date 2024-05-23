@@ -1,5 +1,3 @@
-
-
 const api_Url = 'https://v2.api.noroff.dev/';
 
 export const register_Api = `${api_Url}auth/register`
