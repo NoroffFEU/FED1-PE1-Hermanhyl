@@ -1,12 +1,12 @@
-// import {fetchAPI} from "./fetch.mjs";
+import { isLoggedIn } from '../js-files/comon.mjs';
 
 const idParameter = window.location.search;
 const searchParameter = new URLSearchParams(idParameter);
 export const postId = searchParameter.get('id');
-console.log('this is the id of post', postId);
 
 if(postId) {
     blogPostsFetch(postId)
+    
 
 function blogPostsFetch(postId)  {
     fetch(`https://v2.api.noroff.dev/blog/posts/bilbobolla/${postId}`, {
@@ -42,19 +42,21 @@ console.log(data);
             published.textContent = data.data.created
 
             let author = document.createElement('p');
-            author.textContent = data.data.author
+            author.textContent = data.data.author.name
 
             let edit = document.createElement('button');
             edit.textContent = 'Edit';
             edit.addEventListener('click', () => {
             window.location.href = '../post/edit.html' + '?' + postId
-            console.log(edit);
             });
+            if (!isLoggedIn()) {
+                edit.style.display ='none';
+            }
 
             post.append(img, title, blogText, published, author, edit);
             postContainer.appendChild(post)
 
-    })
+    }) 
     .catch(error => {
         console.error('Error fetching posts:', error);
     });
