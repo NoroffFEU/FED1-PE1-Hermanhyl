@@ -1,5 +1,3 @@
-
-
 // Fetch data from the API endpoint
 fetch('https://v2.api.noroff.dev/blog/posts/bilbobolla')
     .then(response => {
@@ -40,16 +38,15 @@ function createBlogCards(blogPosts) {
 
         let title = document.createElement('h2');
         title.textContent = data.title;
-        // title.addEventListener('click', () => {
-        //     window.location.href = `post/index.html?id=${data.id}`;
-        // });
+        title.addEventListener('click', () => {
+            window.location.href = `post/index.html?id=${data.id}`;
+        });
 
         gridItem.appendChild(img);
         gridItem.appendChild(title);
         gridContainer.appendChild(gridItem);
     });
 }
-
 
 document.addEventListener("DOMContentLoaded", function () {
     const apiUrl = 'https://v2.api.noroff.dev/blog/posts/bilbobolla';
@@ -80,9 +77,18 @@ document.addEventListener("DOMContentLoaded", function () {
         const postData = postsData[index];
         if (postData) {
             postContainer.innerHTML = `
-                <img src="${postData.media.url}" alt="${postData.title}">
-                <h2>${postData.title}</h2>
+                <img src="${postData.media.url}" alt="${postData.title}" id="postImage">
+                <h2 id="postTitle">${postData.title}</h2>
             `;
+
+            // Add click event listeners to the image and title
+            document.getElementById('postImage').addEventListener('click', () => {
+                window.location.href = `post/index.html?id=${postData.id}`;
+            });
+
+            document.getElementById('postTitle').addEventListener('click', () => {
+                window.location.href = `post/index.html?id=${postData.id}`;
+            });
         }
     }
 
