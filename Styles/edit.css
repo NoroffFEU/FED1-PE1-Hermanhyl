@@ -1,0 +1,46 @@
+.edit-container {
+    width: 80%;
+    margin: 20px auto;
+    background-color: #3B3B3B;
+    padding: 20px;
+    border-radius: 5px;
+    border-color: #000000;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+.edit-container h1 {
+    color: #FFB800;
+    text-align: center;
+}
+.edit-container input[type="text"],
+.edit-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+.edit-container textarea {
+    height: 200px;
+}
+.edit-container input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    padding: 15px 20px;
+    font-size: 16px;
+}
+.edit-container input[type="submit"]:hover {
+    background-color: #45a049;
+}
+.image-upload-btn {
+    background-color: #000000;
+    color: #FFB800;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 14px;
+    cursor: pointer;
+}
