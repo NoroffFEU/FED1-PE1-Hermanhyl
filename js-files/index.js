@@ -8,7 +8,6 @@ fetch('https://v2.api.noroff.dev/blog/posts/bilbobolla')
     })
     .then(data => {
         createBlogCards(data.data);
-        console.log(data);
     })
     .catch(error => {
         console.error('Error fetching posts:', error);

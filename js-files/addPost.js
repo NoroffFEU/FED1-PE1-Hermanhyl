@@ -2,13 +2,11 @@ import {API_Add_Post_Url} from "../js-files/constant.mjs"
 
 function getAccessToken() {
     const userInfo = JSON.parse(localStorage.getItem('access-token'));
-    console.log(userInfo);
     return userInfo ? userInfo : ' ';
 }
 
 async function addBlogPost() {
     const accessToken = getAccessToken();
-    console.log(accessToken);
     const form = document.getElementById('add-post')
     form.addEventListener('submit', async (event) => {
         event.preventDefault()
@@ -34,7 +32,7 @@ async function addBlogPost() {
     } catch (error) {
         alert('Failed to add post. Please try again later.');
         console.error('Error adding post:', error);
-        throw error; // rethrow the error to handle it outside
+        throw error;
     } finally {
         window.location.href = '../index.html';
     }
