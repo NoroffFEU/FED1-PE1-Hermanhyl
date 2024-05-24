@@ -1,9 +1,8 @@
-
-.login-body {
+.register-body {
     background-color: #000000;
 }
 
-.login-container {
+.register-container {
     width: 300px;
     margin: 100px auto;
     background-color: #000000;
@@ -11,13 +10,15 @@
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-.login-container h1 {
+.register-container h1 {
     color: #FFB800;
     text-align: center;
 }
-.login-container input[type="text"],
-.login-container input[type="password"],
-.login-container input[type="submit"] {
+
+.register-container input,
+.register-container input[type="text"],
+.register-container input[type="password"],
+.register-container input[type="submit"] {
     width: 100%;
     padding: 10px;
     margin: 10px 0;
@@ -25,12 +26,12 @@
     border-radius: 5px;
     box-sizing: border-box;
 }
-.login-container input[type="submit"] {
+.register-container input[type="submit"] {
     background-color: #4CAF50;
     color: white;
     cursor: pointer;
 }
-.login-container input[type="submit"]:hover {
+.register-container input[type="submit"]:hover {
     background-color: #216125;
 }
 
@@ -47,6 +48,6 @@
     cursor: pointer;
 }
 
-.login-container p {
+.register-container p {
     color: white;
 }
