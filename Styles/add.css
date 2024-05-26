@@ -14,7 +14,8 @@
     text-align: center;
 }
 
-.add-container input[type="text"],
+.add-container input[type="text"], 
+.add-container input[type="url"],
 .add-container textarea {
     width: 100%;
     padding: 10px;
