@@ -1,16 +1,47 @@
 import { API_Edit_Post } from "../js-files/constant.mjs";
 
-// Function to get access token
 function getAccessToken() {
     const userInfo = JSON.parse(localStorage.getItem('access-token'));
     return userInfo ? userInfo : ' ';
-}
+} 
+async function fetchBlog(){
+    try {
+        const id = window.location.search.slice(1);
+        const response = await fetch(`https://v2.api.noroff.dev/blog/posts/bilbobolla/${id}`, {    
+            method: 'GET', 
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            },
+        }) 
+    
+        const blog = await response.json(); 
+        console.log(blog);
+        return blog.data
+        } catch(error) {
+            console.error(error)
+        }
+    
+} 
 
-// Function to edit the blog post
 async function editBlogPost() {
     const id = window.location.search.slice(1);
     const accessToken = getAccessToken();
     const form = document.getElementById('edit-post');
+
+    const blog = await fetchBlog()
+    console.log(blog);
+    const name = document.getElementById('image');
+    const altImage = document.getElementById('alt-image');
+    const title = document.getElementById('title');
+    const content = document.getElementById('body');
+    content.defaultValue = blog.body
+    altImage.defaultValue = blog.media.alt
+    title.defaultValue = blog.title
+    name.defaultValue = blog.media.url
+    
+
+
+
 
     form.addEventListener('submit', async (event) => {
         event.preventDefault();
@@ -25,7 +56,7 @@ async function editBlogPost() {
                 body: JSON.stringify({
                     media: {
                         url: formData.get('image'),
-                        alt: 'image of blog post; ' + formData.get('title'),
+                        alt: 'image of blog post; ' + formData.get('alt-image'),
                     },
                     title: formData.get('title'),
                     body: formData.get('content'),
@@ -37,16 +68,16 @@ async function editBlogPost() {
         } catch (error) {
             alert('Failed to update post. Please try again later.');
             console.error('Error updating post:', error);
-            throw error; // rethrow the error to handle it outside
+            throw error; 
         } finally {
             window.location.href = 'index.html?id=' + id;
         }
     });
 }
 
-// Function to delete the blog post
 async function deleteBlogPost() {
     const id = window.location.search.slice(1);
+
     const accessToken = getAccessToken();
     try {
         const response = await fetch(`${API_Edit_Post}${id}`, {
@@ -61,14 +92,13 @@ async function deleteBlogPost() {
         }
 
         alert('Post deleted successfully');
-        window.location.href = '../index.html'; // Redirect to index page after deletion
+        window.location.href = '../index.html'; 
     } catch (error) {
         alert('Failed to delete post. Please try again later.');
         console.error('Error deleting post:', error);
     }
 }
 
-// Event listener for the delete button
 document.getElementById('delete-post').addEventListener('click', async () => {
     const confirmDelete = confirm('Are you sure you want to delete this post?');
     if (confirmDelete) {
@@ -76,5 +106,46 @@ document.getElementById('delete-post').addEventListener('click', async () => {
     }
 });
 
-// Call the editBlogPost function to initialize the edit functionality
+
 editBlogPost();
+
+
+
+
+// async function editBlogPost() {
+//     const id = window.location.search.slice(1);
+//     const accessToken = getAccessToken();
+//     const form = document.getElementById('edit-post');
+
+//     try {
+//         // Fetch blog post data
+//         const response = await fetch(`https://v2.api.noroff.dev/blog/posts/bilbobolla/${id}`, {
+//             method: 'GET',
+//             headers: {
+//                 'Content-type': 'application/json; charset=UTF-8',
+//             },
+//         });
+
+//         if (!response.ok) {
+//             throw new Error('Failed to fetch blog post');
+//         }
+
+//         const blog = await response.json(); // Convert response to JSON
+//         console.log(blog); // Check the fetched data
+
+//         // Populate form fields with fetched data
+//         const image = document.getElementById('image');
+//         const altImage = document.getElementById('alt-image');
+//         const title = document.getElementById('title');
+//         const body = document.getElementById('body');
+
+//         image.value = blog.media.url;
+//         altImage.value = blog.media.alt;
+//         title.value = blog.title;
+//         body.value = blog.body;
+
+//     } catch (error) {
+//         console.error('Error fetching or populating blog post data:', error);
+//         alert('Failed to fetch or populate blog post data. Please try again later.');
+//     }
+// }
