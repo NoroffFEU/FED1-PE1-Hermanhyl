@@ -20,7 +20,8 @@ async function addBlogPost() {
             },
             body: JSON.stringify({
                 media: {
-                    url: formData.get('image')
+                    url: formData.get('image'),
+                    alt: 'image of blog post; ' + formData.get('alt-image'),
                 },
                 title: formData.get('title'),
                 body: formData.get('content')
