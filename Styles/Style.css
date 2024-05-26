@@ -28,8 +28,6 @@ nav {
     justify-content: space-between;
     width: 100%;
     height: 80px;
-
-    /* BB */
     font-family: 'Bruno Ace';
     font-style: normal;
     font-weight: 400;
@@ -87,7 +85,6 @@ nav li {
     height: 144px;
     left: 0px;
     top: 0px;
-    background: url(437296712_384320204592985_11176344310834809_n.jpg);
     filter: drop-shadow(5px 8px 4px rgba(0, 0, 0, 0.25));
     border-radius: 10px;
 }
@@ -104,8 +101,7 @@ nav li {
     font-size: 15px;
     line-height: 18px;
     margin: 0%;
-
-color: #FFFFFF;
+    color: #FFFFFF;
 }
 
 footer {
@@ -117,13 +113,16 @@ footer {
     padding: 20px;
     margin-top: auto; 
 }
+
 footer div {
     display: inline-block;
     margin-right: 20px;
 }
+
 footer div:last-child {
     margin-right: 0;
 }
+
 
 .carusel-container {
     max-width: 600px;
@@ -145,11 +144,6 @@ footer div:last-child {
     margin: 0 auto; 
 }
 
-.post-container, h2 {
-    cursor: pointer;
-    padding-top: 10px;
-}
-
 .post-container {
     background-color: var(--black);
     border: 2px solid var(--gold);
@@ -158,6 +152,10 @@ footer div:last-child {
     margin-bottom: 20px;
 }
 
+.post-container, h2 {
+    cursor: pointer;
+    padding-top: 10px;
+}
 .post-container img {
     width: 300px;
     height: 300px;
@@ -185,4 +183,115 @@ footer div:last-child {
     color: var(--gold);
 }
 
+@media only screen and (max-width: 600px) {
+    nav {
+        height: 60px;
+        font-size: 18px;
+    }
 
+    .logo {
+        font-size: 22px;
+    }
+
+    ul {
+        font-size: 16px;
+    }
+
+    .grid-container {
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 10px;
+        padding: 10px;
+    }
+
+    .grid-container img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .grid-container h2 {
+        font-size: 12px;
+        line-height: 15px;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    footer div {
+        margin: 10px 0;
+    }
+
+    .carusel-container {
+        max-width: 100%;
+    }
+}
+
+/* For screens larger than 600px (tablets and desktops) */
+@media only screen and (min-width: 601px) {
+    nav {
+        height: 80px;
+        font-size: 24px;
+    }
+
+    .logo {
+        font-size: 28px;
+    }
+
+    ul {
+        font-size: 20px;
+    }
+
+    .grid-container {
+        grid-template-columns: repeat(3, 0.5fr);
+        grid-gap: 20px;
+        padding: 20px;
+    }
+
+    .grid-container img {
+        width: 144px;
+        height: 144px;
+    }
+
+    .grid-container h2 {
+        font-size: 15px;
+        line-height: 18px;
+    }
+}
+
+@media only screen and (min-width: 1050px) {
+    nav {
+        height: 80px;
+        font-size: 24px;
+    }
+
+    .logo {
+        font-size: 28px;
+    }
+
+    ul {
+        font-size: 20px;
+    }
+
+    .grid-container {
+        grid-template-columns: repeat(3, 0.5fr);
+        grid-gap: 40px;
+        padding: 40px;
+    }
+
+    .grid-container img {
+        width: 300px;
+        height: 300px;
+    }
+
+    .grid-container h2 {
+        font-size: 18px;
+        line-height: 18px;
+    }
+
+    .post-container img {
+        width: 400px;
+        height: 400px;
+    }
+
+}
