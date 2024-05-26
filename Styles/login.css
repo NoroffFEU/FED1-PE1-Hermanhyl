@@ -26,27 +26,31 @@
     box-sizing: border-box;
 }
 .login-container input[type="submit"] {
-    background-color: #4CAF50;
+    background-color: #216125;
     color: white;
     cursor: pointer;
 }
 .login-container input[type="submit"]:hover {
-    background-color: #216125;
+    background-color: #3ea045;
 }
 
 #logout-button { 
     color: white;
-    background-color:rgb(155, 155, 155);
+    background-color: rgb(94, 94, 94);
     width: 300px;
     height: 37px;
     border-radius: 5px;
 }
 
 #logout-button:hover {
-    background-color: rgb(71, 71, 71);
+    background-color: rgb(68, 68, 68);
     cursor: pointer;
 }
 
 .login-container p {
     color: white;
+}
+
+.login-container a {
+    color: rgb(253, 95, 95);
 }
