@@ -119,6 +119,10 @@ footer div {
     margin-right: 20px;
 }
 
+footer a {
+    color: white;
+}
+
 footer div:last-child {
     margin-right: 0;
 }
