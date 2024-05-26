@@ -28,9 +28,13 @@
         <div class="edit-container">
             <h1>Edit Blog Post</h1>
             <form id="edit-post">
+                <label for="image" style="color: white;">Image</label>
                 <input type="text" name="image" id="image" placeholder="Img-URL" required>
+                <label for="alt-image" style="color: white;">Alt text</label>
                 <input type="text" name="alt-image" id="alt-image" placeholder="Alt Text">
+                <label for="title" style="color: white;">Title</label>
                 <input type="text" name="title" id="title" placeholder="Title" required>
+                <label for="body" style="color: white;">Body text</label>
                 <textarea name="content" id="body" placeholder="Write your blog post here..." required></textarea>
                 <input type="submit" value="Update Post">
             </form>
