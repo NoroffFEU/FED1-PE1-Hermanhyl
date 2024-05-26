@@ -24,7 +24,7 @@
     height: 200px;
 }
 .edit-container input[type="submit"] {
-    background-color: #3f9b42;
+    background-color: #277229;
     color: white;
     cursor: pointer;
     border: none;
@@ -33,7 +33,7 @@
     font-size: 16px;
 }
 .edit-container input[type="submit"]:hover {
-    background-color: #3f9b42;
+    background-color: #277229;
 }
 
 #delete-post {

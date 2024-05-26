@@ -30,7 +30,7 @@
 }
 
 .add-container input[type="submit"] {
-    background-color: #3f9b42;
+    background-color: #277229;
     color: white;
     cursor: pointer;
     border: none;
@@ -40,7 +40,7 @@
 }
 
 .add-container input[type="submit"]:hover {
-    background-color: #3f9b42;
+    background-color: #277229;
 }
 
 .image-upload-btn {
