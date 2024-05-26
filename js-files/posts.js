@@ -4,11 +4,12 @@ const idParameter = window.location.search;
 const searchParameter = new URLSearchParams(idParameter);
 export const postId = searchParameter.get('id');
 
-if(postId) {
+    if(postId) {
+
     blogPostsFetch(postId)
     
 
-function blogPostsFetch(postId)  {
+    function blogPostsFetch(postId)  {
     fetch(`https://v2.api.noroff.dev/blog/posts/bilbobolla/${postId}`, {
         method: 'GET',
         headers: {
@@ -23,7 +24,6 @@ function blogPostsFetch(postId)  {
     })
     .then(data => {
             const posts = data.data;
-console.log(data);
             let postContainer = document.getElementById('postsContainer');
 
             let post = document.createElement('div');
