@@ -31,8 +31,9 @@ export const postId = searchParameter.get('id');
 
             let img = document.createElement('img');
                 img.src = data.data.media.url;      
+                img.alt = data.data.media.alt;
 
-            let title = document.createElement('h2');
+            let title = document.createElement('h1');
                 title.textContent = data.data.title;
 
             let blogText = document.createElement('p');
