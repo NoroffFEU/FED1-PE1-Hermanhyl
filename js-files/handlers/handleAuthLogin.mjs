@@ -1,5 +1,4 @@
 export const addAuthToken = (token) => {
-    console.log('add token', token);
     localStorage.setItem('access-token', token);
 };
 

@@ -13,7 +13,6 @@ registerForm.addEventListener('submit', (event) => {
 });
 
 async function registerUser(name, email, password) {
-    console.log('register user');
     const response = await doFetch(register_Api, false, {
         method: 'POST',
         body: JSON.stringify({
@@ -27,35 +26,4 @@ async function registerUser(name, email, password) {
     }
     throw new Error("could not register the account")
 }
-
-
-
-// import { register_Api } from "../constant.mjs";
-// import { setRegisterFormListener } from "../handlers/register.mjs";
-
-// const action = "/js-files/auth/register.mjs";
-// const method = "post";
-
-// export async function register(profile) {
-//     // const registerUrl = api_Url + action;
-//     const body = JSON.stringify(profile);
-
-//     const response = await fetch(register_Api, {
-//         headers: {
-//             "content-Type": "application/json"
-//         },
-//         method: 'POST',
-//         body: JSON.stringify({
-//             name,
-//             email,
-//             password
-//         })
-//     })
-// }
-
-//     setRegisterFormListener()
-
-//     const result = await response.json()
-//     console.log(result);
-
 

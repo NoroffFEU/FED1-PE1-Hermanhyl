@@ -1,4 +1,3 @@
-// Fetch data from the API endpoint
 fetch('https://v2.api.noroff.dev/blog/posts/bilbobolla')
     .then(response => {
         if (!response.ok) {
@@ -31,9 +30,7 @@ function createBlogCards(blogPosts) {
         img.alt = '';
         if (data.media && data.media.url) {
             img.src = data.media.url;
-        } else {
-            // img.src = '../images/Image_nr1.jpg';
-        }
+        } 
 
         let title = document.createElement('h2');
         title.textContent = data.title;
@@ -55,7 +52,6 @@ document.addEventListener("DOMContentLoaded", function () {
     let currentIndex = 0;
     let postsData = [];
 
-    // Fetch latest three posts from the API
     fetch(apiUrl)
         .then(response => {
             if (!response.ok) {
@@ -71,7 +67,6 @@ document.addEventListener("DOMContentLoaded", function () {
             console.error('Error fetching posts:', error);
         });
 
-    // Function to render the current post
     function renderPost(index) {
         const postData = postsData[index];
         if (postData) {
@@ -80,7 +75,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 <h2 id="postTitle">${postData.title}</h2>
             `;
 
-            // Add click event listeners to the image and title
             document.getElementById('postImage').addEventListener('click', () => {
                 window.location.href = `post/index.html?id=${postData.id}`;
             });
@@ -91,13 +85,11 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // Event listener for next button
     nextButton.addEventListener('click', function () {
         currentIndex = (currentIndex + 1) % postsData.length;
         renderPost(currentIndex);
     });
 
-    // Event listener for previous button
     prevButton.addEventListener('click', function () {
         currentIndex = (currentIndex - 1 + postsData.length) % postsData.length;
         renderPost(currentIndex);

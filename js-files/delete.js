@@ -1,4 +1,3 @@
-// Function to delete a blog post by ID
 async function deleteBlogPostById(id) {
     const url = `https://v2.api.noroff.dev/blog-posts/${id}`;
 

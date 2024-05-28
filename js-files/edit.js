@@ -15,7 +15,6 @@ async function fetchBlog(){
         }) 
     
         const blog = await response.json(); 
-        console.log(blog);
         return blog.data
         } catch(error) {
             console.error(error)
@@ -29,7 +28,6 @@ async function editBlogPost() {
     const form = document.getElementById('edit-post');
 
     const blog = await fetchBlog()
-    console.log(blog);
     const name = document.getElementById('image');
     const altImage = document.getElementById('alt-image');
     const title = document.getElementById('title');
@@ -39,9 +37,6 @@ async function editBlogPost() {
     title.defaultValue = blog.title
     name.defaultValue = blog.media.url
     
-
-
-
 
     form.addEventListener('submit', async (event) => {
         event.preventDefault();
